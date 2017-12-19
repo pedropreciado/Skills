@@ -13,4 +13,10 @@ class Skill < ApplicationRecord
   validates :name, presence: true
   
   belongs_to :user
+  
+  belongs_to :recommendation, 
+    primary_key: :id, 
+    foreign_key: :skill_id, 
+    class_name: :Recommendation,
+    optional: :true
 end

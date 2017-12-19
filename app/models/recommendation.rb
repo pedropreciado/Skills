@@ -22,4 +22,8 @@ class Recommendation < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
   
+  has_one :skill,
+    primary_key: :id, 
+    foreign_key: :skill_id,
+    class_name: :Skill
 end
