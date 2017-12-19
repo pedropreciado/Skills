@@ -11,7 +11,12 @@
 
 class Skill < ApplicationRecord
   validates :name, presence: true
-  
+
+  has_many :endorsements,
+    primary_key: :id, 
+    foreign_key: :skill_id,
+    class_name: :Endorsement
+
   belongs_to :user
   
   belongs_to :recommendation, 

@@ -21,10 +21,20 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   
   has_many :skills
+
   has_many :endorsements,
     primary_key: :id,
     foreign_key: :author_id,
     class_name: :Endorsement
+  
+  has_many :recommended_skills, 
+    through: :skills,
+    source: :recomendation
+    
+  has_many :recomendations,
+    primary_key: :id, 
+    foreign_key: :author_id,
+    class_name: :Recommendation
   
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
