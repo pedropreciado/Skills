@@ -1,5 +1,33 @@
 Rails.application.routes.draw do
   namespace :api do
+    get 'skill/new'
+  end
+
+  namespace :api do
+    get 'skill/index'
+  end
+
+  namespace :api do
+    get 'skill/show'
+  end
+
+  namespace :api do
+    get 'skill/create'
+  end
+
+  namespace :api do
+    get 'skill/edit'
+  end
+
+  namespace :api do
+    get 'skill/update'
+  end
+
+  namespace :api do
+    get 'skill/destroy'
+  end
+
+  namespace :api do
     get 'sessions/create'
   end
 
