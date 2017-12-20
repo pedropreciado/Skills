@@ -10,7 +10,7 @@ class Api::EndorsementsController < ApplicationController
     @endorsement.receiver_id = params[:receiver_id]
     if @endorsement.save
       @user = User.find_by(id: params[:id])
-      redner "api/user/", user: @user 
+      render "api/user/", user: @user 
     else
       render json: @endorsement.errors_full_messages
     end

@@ -3,7 +3,7 @@ class Api::RecommendationsController < ApplicationController
   end
 
   def index
-    @recommendation = Recommendations.all
+    @recommendations = Recommendations.all
   end
 
   def show
