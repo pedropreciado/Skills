@@ -31,7 +31,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push("/posts"));
+    this.props.action(this.state).then(() => this.props.history.push("/"));
   }
 
   errors() {
@@ -73,13 +73,36 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+
+    let other = (this.props.formtype === "login" ? "signup" : "login")
+
     return (
       <div>
         <div>
           <form onSubmit={this.handleSubmit}>
+
             <h1>form</h1>
 
+              <input
+                type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+                placeholder="username"
+                />
+
+                <input
+                  type={this.passwordText()}
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="password"
+                  />
+                  <div className="submit-buttons">
+
+               <input
+                 type="submit"
+                 className="submit"
+                 value={this.props.formType}/>
+             </ div>
           </form>
         </div>
       </div>

@@ -8,11 +8,11 @@ const App = () => (
   <div>
     <h1>WantedlySkills</h1>
     <Switch>
-    <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
+      <AuthRoute path="/login" component={SessionFormContainer} />
+        <AuthRoute path="/signup" component={SessionFormContainer} />
       <Switch>
-        <Route exact path="/" component={SessionFormContainer} />
-      </ Switch>
+         <Route exact path="/" component={SessionFormContainer} />
+      </Switch>
     </Switch>
 
   </div>

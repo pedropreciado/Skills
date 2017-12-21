@@ -18,3 +18,16 @@ html {
   color: grey;
   font-family: 'Yantramanav', sans-serif;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  border: .5px solid grey;
+}
+
+form > input {
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+}
