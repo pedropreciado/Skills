@@ -8,7 +8,6 @@ class SessionForm extends React.Component {
 
     this.state = {
       username: "",
-      email: "",
       password: ""
     };
 
@@ -75,13 +74,18 @@ class SessionForm extends React.Component {
 
   render() {
 
+
     return (
       <div>
         <div>
           <NavBarContainer/>
           <form onSubmit={this.handleSubmit}>
 
-            <h1>form</h1>
+            <h1>
+              {
+                this.props.formType
+              }
+            </h1>
 
               <input
                 type="text"

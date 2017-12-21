@@ -21,9 +21,9 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy!
   end
-  
+
   def user_params
-    params.require(:user).permit(:username, :email, :password, :photo_url)
+    params.require(:user).permit(:username, :password, :avatar_url)
   end
-  
+
 end
