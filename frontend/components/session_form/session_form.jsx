@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import NavBarContainer from "../nav_bar/nav_bar_container";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -74,11 +75,10 @@ class SessionForm extends React.Component {
 
   render() {
 
-    let other = (this.props.formtype === "login" ? "signup" : "login")
-
     return (
       <div>
         <div>
+          <NavBarContainer/>
           <form onSubmit={this.handleSubmit}>
 
             <h1>form</h1>
