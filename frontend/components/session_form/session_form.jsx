@@ -77,10 +77,11 @@ class SessionForm extends React.Component {
       <div>
         <div>
           <h1>
-            WantedlySkills
+            session form
           </h1>
         </div>
       </div>
     )
   }
 }
+export default withRouter(SessionForm);
