@@ -73,12 +73,14 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <div>
-          <h1>
-            session form
-          </h1>
+          <form onSubmit={this.handleSubmit}>
+            <h1>form</h1>
+
+          </form>
         </div>
       </div>
     )

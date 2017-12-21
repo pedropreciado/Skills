@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+  color: grey;
+  font-family: 'Yantramanav', sans-serif;
+}
