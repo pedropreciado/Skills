@@ -1,19 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import SkillsIndexItem from "./skills_index_item";
 
 class SkillsIndex extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  componentWillMount() {
+    this.props.fetchSkills();
+  }
+
   render() {
-    console.log("skill_index", this.props);
     return (
       <div>
         <ul>
+          <h1>skills index</h1>
           {
             this.props.skills.map((skill) => (
-              <SkillIndexItem
+              <SkillsIndexItem
                 skill={skill}
                 />
             ))
@@ -23,3 +28,5 @@ class SkillsIndex extends React.Component {
     )
   }
 }
+
+export default SkillsIndex;

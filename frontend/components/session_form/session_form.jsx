@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
                 this.props.formType
               }
             </h1>
-
+              {this.errors()}
               <input
                 type="text"
                 value={this.state.username}

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import SkillIndex from "./skill_index";
+import SkillIndex from "./skills_index";
 import { fetchSkills, createSkill, endorseSkill } from "../../actions/skills_actions";
 
 const mapStateToProps = (state) => {
