@@ -3,7 +3,7 @@ class Api::SkillsController < ApplicationController
   end
 
   def index
-    @skills = current_user.skills
+    @skills = User.find_by(id: current_user.id).skills
   end
 
   def show
@@ -12,7 +12,6 @@ class Api::SkillsController < ApplicationController
 
   def create
     @skill = Skill.new(skill_params)
-    @skill.user_id = current_user.id
     if @skill.save
       render :index
     else
@@ -37,7 +36,7 @@ class Api::SkillsController < ApplicationController
   end
 
   def skill_params
-    params.require(:skill).permit(:name)
+    params.require(:skill).permit(:name, :user_id)
   end
 
 end

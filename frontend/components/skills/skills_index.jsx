@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import SkillsIndexItem from "./skills_index_item";
+import SkillsFormContainer from "./skills_form_container";
 
 class SkillsIndex extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class SkillsIndex extends React.Component {
             ))
           }
         </ul>
+        <SkillsFormContainer/>
       </div>
     )
   }

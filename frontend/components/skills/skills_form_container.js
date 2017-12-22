@@ -21,4 +21,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default withRouter(connect(
   mapStatetoProps,
   mapDispatchToProps
-)(SkillsForm))
+)(SkillsForm));
