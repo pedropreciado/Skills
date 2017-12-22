@@ -21,6 +21,8 @@ class SkillsIndex extends React.Component {
             this.props.skills.map((skill) => (
               <SkillsIndexItem
                 skill={skill}
+                fetchSkill={this.props.fetchSkill}
+                endorseSkill={this.props.endorseSkill}
                 />
             ))
           }

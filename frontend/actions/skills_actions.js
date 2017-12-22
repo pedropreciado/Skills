@@ -16,8 +16,8 @@ export const createSkill = (skill) => dispatch => (
   SkillsApiUtil.createSkill(skill).then((skill) => dispatch(receiveSkill(skill)))
 );
 
-export const endorseSkill = (id) => dispatch => (
-  SkillsApiUtil.endorseSkill(id).then((skill) => dispatch(receiveSkill(skill)))
+export const endorseSkill = (endorsement) => dispatch => (
+  SkillsApiUtil.endorseSkill(endorsement).then((skill) => dispatch(receiveSkill(skill)))
 )
 
 const receiveAllSkills = skills => ({

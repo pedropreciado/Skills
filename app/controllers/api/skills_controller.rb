@@ -3,10 +3,7 @@ class Api::SkillsController < ApplicationController
   end
 
   def index
-    p '**************************************************'
-    p current_user.username
     @skills = current_user.skills
-    p @skills
 
   end
 

@@ -4,18 +4,23 @@ class Api::EndorsementsController < ApplicationController
   end
 
   def create
-    @endorsement = Endorsement.new
-    @endorsement.skill_id = params[:id]
+    p "********************************"
+    p endorsement_params
+    @endorsement = Endorsement.new(endorsement_params)
     @endorsement.author_id = current_user.id
-    @endorsement.receiver_id = params[:receiver_id]
     if @endorsement.save
-      @user = User.find_by(id: params[:id])
-      render "api/user/", user: @user 
+      @skill = Skill.find_by(id: @endorsement.skill_id)
+      render "api/skills/show", skill: @skill
     else
-      render json: @endorsement.errors_full_messages
+      render json: @endorsement.errors.full_messages
     end
   end
 
   def destroy
   end
+
+  def endorsement_params
+    params.require(:endorsement).permit(:skill_id, :receiver_id)
+  end
+
 end

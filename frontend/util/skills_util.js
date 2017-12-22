@@ -20,10 +20,10 @@ export const createSkill = (skill) => {
   })
 }
 
-export const endorseSkill = (id) => {
+export const endorseSkill = (endorsement) => {
   return $.ajax({
     method: "POST",
     url: "/api/endorsements",
-    data: { id }
+    data: { endorsement }
   })
 }
