@@ -6,7 +6,7 @@ export const fetchSkills = () => {
 }
 
 export const fetchSkill = (id) => {
-  return $.ajax.({
+  return $.ajax({
     method: "GET",
     url: `/api/skills/${id}`
   })
