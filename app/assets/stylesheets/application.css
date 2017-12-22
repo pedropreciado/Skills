@@ -15,7 +15,8 @@
  */
 
 html {
-  color: grey;
+  background-color: rgb(33, 33, 33);
+  color: white;
   font-family: 'Yantramanav', sans-serif;
 }
 
@@ -27,6 +28,8 @@ form {
 }
 
 form > input {
+  background-color: rgb(33, 33, 33);
+  color: white;
   width: 50%;
   margin: 0 auto;
   padding: 10px;
