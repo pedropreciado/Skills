@@ -25,7 +25,9 @@ class SkillsIndex extends React.Component {
             ))
           }
         </ul>
-        <SkillsFormContainer/>
+        <SkillsFormContainer
+          fetchSkills={this.props.fetchSkills}
+          />
       </div>
     )
   }

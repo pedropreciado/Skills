@@ -3,7 +3,11 @@ class Api::SkillsController < ApplicationController
   end
 
   def index
-    @skills = User.find_by(id: current_user.id).skills
+    p '**************************************************'
+    p current_user.username
+    @skills = current_user.skills
+    p @skills
+
   end
 
   def show

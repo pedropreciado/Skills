@@ -19,6 +19,7 @@ class SkillsForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     this.props.createSkill(this.state.skill).then(() => this.props.history.push("/"))
+    this.props.fetchSkills();
   }
 
   update() {

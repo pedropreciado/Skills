@@ -1,19 +1,26 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
-const SkillsIndexItem = (props) => {
-  return (
-    <div>
+class SkillsIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("proops", props.skill);
+  }
+
+  render() {
+    return (
+       <div>
       <div>
         {
-          props.skill.name
+          this.props.skill.name
         }
         {
-          props.skill.endorsements
+          this.props.skill.endorsements
         }
       </div>
     </div>
-  )
+    )
+  }
 }
 
 export default SkillsIndexItem
