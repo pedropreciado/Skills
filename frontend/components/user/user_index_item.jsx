@@ -12,6 +12,15 @@ class UserIndexItem extends React.Component {
         {
           this.props.user.username
         }
+        <ul>
+          {
+            this.props.user.skills.map((skill) => (
+              <li>
+                { `${skill.name} ${skill.endorsements}` }
+              </li>
+            ))
+          }
+        </ul>
       </div>
     )
   }

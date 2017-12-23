@@ -1,4 +1,11 @@
 json.extract! user, :id, :username
 
-json.current_user_skills = current_user.skills
+user_skills = user.skills
+json.skills do
+  json.array! user_skills do |skill|
+    json.extract! skill, :id, :name
+    json.endorsements skill.endorsements.count
+  end
+end
 
+# json.skills user.skills
