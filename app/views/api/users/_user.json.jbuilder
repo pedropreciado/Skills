@@ -7,5 +7,3 @@ json.skills do
     json.endorsements skill.endorsements.count
   end
 end
-
-# json.skills user.skills
