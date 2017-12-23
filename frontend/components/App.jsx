@@ -4,13 +4,15 @@ import { AuthRoute, ProtectedRoute } from  "../util/route_util";
 
 import SessionFormContainer from "./session_form/session_form_container";
 import SkillIndexContainer from "./skills/skills_index_container";
+import UserIndexContainer from "./user/user_index_container";
 
 const App = () => (
   <div>
     <h1>WantedlySkills</h1>
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
-        <AuthRoute path="/signup" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+      <ProtectedRoute path="/users" component={UserIndexContainer}/>
       <Switch>
         <ProtectedRoute path="/" component={SkillIndexContainer} />
          <Route exact path="/" component={SessionFormContainer} />

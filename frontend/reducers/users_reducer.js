@@ -1,7 +1,7 @@
 import { RECEIVE_USER, RECEIVE_ALL_USERS } from "../actions/users_actions";
 import merge from "lodash/merge";
 
-const UsersReducer = (oldSatte = {}, action) => {
+const UsersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_USER:

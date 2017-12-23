@@ -24,7 +24,6 @@ class SkillsForm extends React.Component {
 
   update() {
     return (event) => {
-      console.log(event.target.value)
       event.preventDefault();
       this.setState({
         skill: merge({}, this.state.skill, {

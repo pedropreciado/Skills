@@ -16,7 +16,10 @@ class SkillsIndex extends React.Component {
     return (
       <div>
         <ul>
-          <h1>skills index</h1>
+          <h1>Skills Index</h1>
+          <Link to="/users">
+            <button>All Users</button>
+          </Link>
           {
             this.props.skills.map((skill) => (
               <SkillsIndexItem

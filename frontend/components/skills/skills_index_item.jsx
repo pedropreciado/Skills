@@ -4,7 +4,6 @@ import { Link, withRouter } from "react-router-dom";
 class SkillsIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    console.log("proops", props.skill);
 
     this.endorsable = this.endorsable.bind(this);
   }
