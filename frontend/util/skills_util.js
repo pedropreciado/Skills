@@ -21,6 +21,7 @@ export const createSkill = (skill) => {
 }
 
 export const endorseSkill = (endorsement) => {
+  console.log("hit");
   return $.ajax({
     method: "POST",
     url: "/api/endorsements",

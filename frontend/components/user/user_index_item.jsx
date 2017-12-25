@@ -1,4 +1,6 @@
 import React from "react";
+import { Link, withRouter } from "react-router-dom"
+import SkillsIndexItem from "../skills/skills_index_item";
 
 class UserIndexItem extends React.Component {
   constructor(props) {
@@ -9,10 +11,14 @@ class UserIndexItem extends React.Component {
   render() {
     return (
       <div>
-        {
-          this.props.user.username
-        }
+          <div>
+            <Link to={`/users/${this.props.user.id}`}>
+              {this.props.user.username}
+            </Link>
+        </div>
+
         <ul>
+          <li>
           {
             this.props.user.skills.map((skill) => (
               <li>
@@ -20,10 +26,11 @@ class UserIndexItem extends React.Component {
               </li>
             ))
           }
+        </li>
         </ul>
       </div>
     )
   }
 }
 
-export default UserIndexItem;
+export default withRouter(UserIndexItem);
