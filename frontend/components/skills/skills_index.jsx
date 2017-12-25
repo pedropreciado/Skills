@@ -16,7 +16,7 @@ class SkillsIndex extends React.Component {
   render() {
     return (
       <div>
-      <div className="skills-index-nav-buttons">
+      <div className="skills-index-nav">
         <h1>{this.props.currentUser.username}</h1>
         <Link to="/users">
           <button>All Users</button>
@@ -37,7 +37,7 @@ class SkillsIndex extends React.Component {
             ))
           }
         </ul>
-        
+
         <SkillsFormContainer
           user={this.props.currentUser}
           fetchSkills={this.props.fetchSkills}

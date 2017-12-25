@@ -21,18 +21,23 @@ class SkillsIndexItem extends React.Component {
   }
 
   render() {
+
+    let endorsementStyle = this.props.skill.current_user_endorsed ? "endorsement-grey" : "endorsement"
+
+    console.log(endorsementStyle);
+
     return (
        <div>
          <div
            onClick={this.endorsable}
            id="skills-index-item"
            >
-          <div id="endorsement">
+          <div id={endorsementStyle}>
         {
           this.props.skill.endorsements
         }
           </div>
-          <div>
+          <div id="skill-name">
         {
           this.props.skill.name
         }

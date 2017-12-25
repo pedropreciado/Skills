@@ -32,9 +32,13 @@ form > input {
   padding: 10px;
 }
 
-.skills-index-nav-buttons {
+.skills-index-nav {
   display: block;
   align-items: center
+}
+
+.skills-index-nav > button {
+  float: right;
 }
 
 .skills-index-ul {
@@ -45,13 +49,29 @@ form > input {
 #skills-index-item {
   width: 40%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #endorsement {
+  color: rgb(47, 180, 198);
   width: 20px;
   border-radius: 50%;
-  border: .5px solid rgb(47, 180, 198);
+  border: 1px solid rgb(47, 180, 198);
   text-align: center;
+}
+
+#endorsement-grey {
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  background-color: grey;
+  text-align: center;
+  color: white
+}
+
+#skill-name {
+  padding-left: 10px;
 }
