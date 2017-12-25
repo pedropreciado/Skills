@@ -21,11 +21,25 @@ export const createSkill = (skill) => {
   })
 }
 
+export const deleteSkill = (id) => {
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/skills/${id}`
+  })
+}
+
 export const endorseSkill = (endorsement) => {
-  console.log("hit");
   return $.ajax({
     method: "POST",
     url: "/api/endorsements",
     data: { endorsement }
+  })
+}
+
+
+export const unendorseSkill = (id) => {
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/endorsements/${id}`
   })
 }
