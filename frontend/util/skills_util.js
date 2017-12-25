@@ -37,9 +37,10 @@ export const endorseSkill = (endorsement) => {
 }
 
 
-export const unendorseSkill = (id) => {
+export const unendorseSkill = ({ skill_id }) => {
+
   return $.ajax({
     method: "DELETE",
-    url: `/api/endorsements/${id}`
+    url: `/api/endorsements/${skill_id}`
   })
 }

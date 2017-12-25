@@ -11,6 +11,7 @@ class SkillsIndexItem extends React.Component {
       addedSkill: false
     }
 
+
   }
 
   endorsable() {
@@ -19,6 +20,10 @@ class SkillsIndexItem extends React.Component {
       this.props.endorseSkill({
         skill_id: this.props.skill.id,
         receiver_id: this.props.skill.user.id
+      });
+    } else {
+      this.props.unendorseSkill({
+        skill_id: this.props.skill.id
       });
     }
     this.props.fetchUser(this.props.skill.user.id);

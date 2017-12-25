@@ -44,6 +44,8 @@ class SkillsIndex extends React.Component {
               <SkillsIndexItem
                 skill={skill}
                 fetchSkill={this.props.fetchSkill}
+                fetchUser={this.props.fetchUser}
+                unendorseSkill={this.props.unendorseSkill}
                 endorseSkill={this.props.endorseSkill}
                 history={this.props.history}
                 addedSkill={this.addedSkill}

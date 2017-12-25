@@ -15,7 +15,10 @@ class Api::EndorsementsController < ApplicationController
   end
 
   def destroy
-    @endorsement = Endorsement.find_by(id: params[:id])
+    p "///////////////////////////kkksadfdsfadf......................."
+    p params
+    @endorsement = Endorsement.find_by(skill_id: params[:id])
+
     @skill = Skill.find_by(id: @endorsement.skill_id)
     if @endorsement.destroy!
       render "api/skills/show", skill: @skill
