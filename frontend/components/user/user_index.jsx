@@ -5,12 +5,10 @@ class UserIndex extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      dataLoaded: false
-    }
+    console.log(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUsers();
   }
 

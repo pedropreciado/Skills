@@ -5,17 +5,18 @@ class SkillsForm extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log("props", this.props);
+    let flavor = this.props.flavor;
 
-    let flavor = this.props.flavor
+    let user_id = this.props.user.id;
+
+    console.log(this.props);
 
     this.state = {
       flavor,
       skill: {
         name: "",
-        user_id: props.user.id
-      },
-      heardSubmit: false
+        user_id
+      }
 
     }
 
@@ -44,8 +45,9 @@ class SkillsForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createSkill(this.state.skill).then(() => this.props.history.push(this.props.history.location.pathname))
-    this.setState({ heardSubmit: true })
+    this.props.createSkill(this.state.skill);
+    this.props.fetchUser(this.props.user.id);
+    window.location.reload()
   }
 
   update() {
@@ -60,7 +62,6 @@ class SkillsForm extends React.Component {
   }
 
   render() {
-
 
     return (
       <div>

@@ -6,11 +6,11 @@ import UserShow from "./user_show";
 const mapStateToProps = (state, ownProps) => {
   let user = state.users[ownProps.match.params.userId]
 
-  user = user ? user : {username: "", id: "", skills: []}
+  let skills = !!user ? user.skills : []
 
   return {
     user,
-    skills: user.skills,
+    skills,
     currentUser: state.session.currentUser
   }
 }

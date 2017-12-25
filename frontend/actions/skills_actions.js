@@ -13,9 +13,9 @@ export const fetchSkill = skill => dispatch => (
 );
 
 export const createSkill = (skill) => dispatch => {
-  SkillsApiUtil.createSkill(skill).then((skills) => {
-    console.log(skills);
-    dispatch(receiveAllSkills(skills))
+  SkillsApiUtil.createSkill(skill).then((skill) => {
+    console.log(skill);
+    dispatch(receiveSkill(skill))
   }
 )
 };

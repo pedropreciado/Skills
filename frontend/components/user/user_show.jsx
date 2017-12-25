@@ -12,24 +12,15 @@ class UserShow extends React.Component {
       addedSkill: false
     }
 
-    this.addedSkill = this.addedSkill.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchUsers();
-    this.props.fetchUser(this.props.location.pathname.slice(-1));
-    console.log(this.props.location.pathname.slice(-1))
+    
   }
-
-  addedSkill() {
-    this.setState({added: true})
-  }
-
 
   render() {
-    console.log(this.props);
 
-    console.log(!!this.props.user);
     if (!this.props.user) {
       return (
         <h1>

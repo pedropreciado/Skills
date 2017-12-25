@@ -3,8 +3,8 @@ class Api::SkillsController < ApplicationController
   end
 
   def index
-    p "/////////////......................./////////////////"
-    p current_user
+
+    @test = "test"
 
     @skills = current_user.skills
   end
@@ -16,7 +16,7 @@ class Api::SkillsController < ApplicationController
   def create
     @skill = Skill.new(skill_params)
     if @skill.save
-      render :index
+      render :show
     else
       render json: @skill.errors.full_messages, status: 422
     end
