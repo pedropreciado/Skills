@@ -35,7 +35,9 @@ class SkillsIndex extends React.Component {
           }
         </ul>
         <SkillsFormContainer
+          user={this.props.currentUser}
           fetchSkills={this.props.fetchSkills}
+          flavor={"currentUserIndex"}
           />
       </div>
     )
