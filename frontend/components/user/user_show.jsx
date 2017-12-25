@@ -16,7 +16,7 @@ class UserShow extends React.Component {
 
   componentWillMount() {
     this.props.fetchUsers();
-    
+
   }
 
   render() {
@@ -45,6 +45,7 @@ class UserShow extends React.Component {
                 fetchSkill={this.props.fetchSkill}
                 endorseSkill={this.props.endorseSkill}
                 addedSkill={this.addedSkill}
+                fetchUser={this.props.fetchUser}
                 />
             ))
           }

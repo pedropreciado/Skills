@@ -47,7 +47,6 @@ class SkillsForm extends React.Component {
     event.preventDefault();
     this.props.createSkill(this.state.skill);
     this.props.fetchUser(this.props.user.id);
-    window.location.reload()
   }
 
   update() {

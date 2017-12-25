@@ -18,6 +18,7 @@ const mapDispatchToProps = (dispatch) => ({
   createSkill: (skill) => dispatch(createSkill(skill)),
   endorseSkill: (endorsement) => dispatch(endorseSkill(endorsement)),
   fetchUsers: () => dispatch(fetchUsers()),
+  fetchUser: (id) => dispatch(fetchUser(id)),
   logout: () => dispatch(logout())
 })
 
