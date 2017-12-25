@@ -15,8 +15,7 @@
  */
 
 html {
-  background-color: rgb(33, 33, 33);
-  color: white;
+  color: grey;
   font-family: 'Yantramanav', sans-serif;
 }
 
@@ -28,9 +27,31 @@ form {
 }
 
 form > input {
-  background-color: rgb(33, 33, 33);
-  color: white;
   width: 50%;
   margin: 0 auto;
   padding: 10px;
+}
+
+.skills-index-nav-buttons {
+  display: block;
+  align-items: center
+}
+
+.skills-index-ul {
+  list-style-type: none;
+  padding: 20px;
+}
+
+#skills-index-item {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  min-width: 200px;
+}
+
+#endorsement {
+  width: 20px;
+  border-radius: 50%;
+  border: .5px solid rgb(47, 180, 198);
+  text-align: center;
 }

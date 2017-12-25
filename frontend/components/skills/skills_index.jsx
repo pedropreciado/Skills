@@ -16,14 +16,17 @@ class SkillsIndex extends React.Component {
   render() {
     return (
       <div>
-        <ul>
-          <h1>Skills Index</h1>
-          <Link to="/users">
-            <button>All Users</button>
-          </Link>
-          <button onClick={this.props.logout}>
-            Logout
-          </button>
+      <div className="skills-index-nav-buttons">
+        <h1>{this.props.currentUser.username}</h1>
+        <Link to="/users">
+          <button>All Users</button>
+        </Link>
+        <button onClick={this.props.logout}>
+          Logout
+        </button>
+      </div>
+
+        <ul className="skills-index-ul">
           {
             this.props.skills.map((skill) => (
               <SkillsIndexItem
@@ -34,6 +37,7 @@ class SkillsIndex extends React.Component {
             ))
           }
         </ul>
+        
         <SkillsFormContainer
           user={this.props.currentUser}
           fetchSkills={this.props.fetchSkills}

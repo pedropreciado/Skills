@@ -23,13 +23,20 @@ class SkillsIndexItem extends React.Component {
   render() {
     return (
        <div>
-         <div onClick={this.endorsable}>
-        {
-          this.props.skill.name
-        }
+         <div
+           onClick={this.endorsable}
+           id="skills-index-item"
+           >
+          <div id="endorsement">
         {
           this.props.skill.endorsements
         }
+          </div>
+          <div>
+        {
+          this.props.skill.name
+        }
+      </div>
         </div>
     </div>
     )
