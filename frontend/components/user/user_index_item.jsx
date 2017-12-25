@@ -8,7 +8,21 @@ class UserIndexItem extends React.Component {
     console.log(props);
   }
 
+  componentWillMount() {
+    console.log("hit");
+    this.props.fetchUsers();
+  }
+
   render() {
+    if (!this.props.user) {
+      return (
+        <h1>
+          Loading...
+        </h1>
+      )
+    }
+
+
     return (
       <div>
           <div>

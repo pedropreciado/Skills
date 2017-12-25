@@ -1,7 +1,8 @@
-export const fetchSkills = () => {
+export const fetchSkills = (id) => {
   return $.ajax({
     method: "GET",
-    url: "/api/skills"
+    url: "/api/skills",
+    data: { id }
   })
 }
 

@@ -6,6 +6,11 @@ class SkillsIndexItem extends React.Component {
     super(props);
 
     this.endorsable = this.endorsable.bind(this);
+
+    this.state = {
+      addedSkill: false
+    }
+
   }
 
   endorsable() {
@@ -16,15 +21,12 @@ class SkillsIndexItem extends React.Component {
         receiver_id: this.props.skill.user.id
       });
     }
-
-    this.props.fetchSkill(this.props.skill.id);
   }
 
   render() {
 
     let endorsementStyle = this.props.skill.current_user_endorsed ? "endorsement-grey" : "endorsement"
 
-    console.log(endorsementStyle);
 
     return (
        <div>

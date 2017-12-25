@@ -26,6 +26,7 @@ class UserIndex extends React.Component {
             this.props.users.map((user) => (
               <UserIndexItem
                 user={user}
+                fetchUsers={this.props.fetchUsers}
                 />
             ))
           }

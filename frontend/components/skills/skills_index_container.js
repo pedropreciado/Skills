@@ -3,6 +3,7 @@ import SkillIndex from "./skills_index";
 import { fetchSkills, fetchSkill, createSkill, endorseSkill } from "../../actions/skills_actions";
 import { fetchUsers } from "../../actions/users_actions";
 import { logout } from "../../actions/session_actions";
+import { withRouter } from "react-router";
 
 const mapStateToProps = (state) => {
   return {
@@ -12,7 +13,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchSkills: () => dispatch(fetchSkills()),
+  fetchSkills: (id) => dispatch(fetchSkills(id)),
   fetchSkill: (id) => dispatch(fetchSkill(id)),
   createSkill: (skill) => dispatch(createSkill(skill)),
   endorseSkill: (endorsement) => dispatch(endorseSkill(endorsement)),
@@ -20,7 +21,7 @@ const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout())
 })
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(SkillIndex)
+)(SkillIndex))

@@ -14,7 +14,9 @@ class SkillsForm extends React.Component {
       skill: {
         name: "",
         user_id: props.user.id
-      }
+      },
+      heardSubmit: false
+
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,8 +25,6 @@ class SkillsForm extends React.Component {
   }
 
   formText() {
-
-    console.log(this.props.flavor);
 
     if (this.props.flavor === "userShow") {
       return (
@@ -41,9 +41,11 @@ class SkillsForm extends React.Component {
     }
   }
 
+
   handleSubmit(event) {
-    event.preventDefault()
-    this.props.createSkill(this.state.skill).then(() => this.props.history.push("/"))
+    event.preventDefault();
+    this.props.createSkill(this.state.skill).then(() => this.props.history.push(this.props.history.location.pathname))
+    this.setState({ heardSubmit: true })
   }
 
   update() {
@@ -58,6 +60,8 @@ class SkillsForm extends React.Component {
   }
 
   render() {
+
+
     return (
       <div>
         <form
@@ -68,13 +72,15 @@ class SkillsForm extends React.Component {
 
           <input
             type="text"
-            placeholder="Add new skill"
+            placeholder="Enter name of skill"
             onChange={this.update()}
             />
 
             <input
               type="submit"
-              value="Add"/>
+              value="Add"
+              id="submit-button"
+              />
         </form>
       </div>
     )

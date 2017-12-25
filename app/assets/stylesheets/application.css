@@ -22,14 +22,29 @@ html {
 form {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-content: space-between;
   border: .5px solid grey;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-form > input {
+form > h1, h2 {
+  text-align: center;
+}
+
+form > input[type="text"] {
   width: 50%;
   margin: 0 auto;
   padding: 10px;
+}
+
+#submit-button {
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 0px;
+  width: 20%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .skills-index-nav {
@@ -62,6 +77,14 @@ form > input {
   border: 1px solid rgb(47, 180, 198);
   text-align: center;
 }
+
+#endorsement:hover {
+  background-color: rgb(47, 180, 198);
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+}
+
 
 #endorsement-grey {
   width: 20px;

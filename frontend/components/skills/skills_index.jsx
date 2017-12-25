@@ -7,13 +7,26 @@ import SkillsFormContainer from "./skills_form_container";
 class SkillsIndex extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      delivered: false,
+      added: false
+    }
+
+    this.addedSkill = this.addedSkill.bind(this);
   }
 
   componentWillMount() {
-    this.props.fetchSkills();
+    this.props.fetchSkills(this.props.currentUser.id);
+  }
+
+  addedSkill() {
+    this.setState({added: true})
   }
 
   render() {
+    console.log(this.props);
+
     return (
       <div>
       <div className="skills-index-nav">
@@ -33,6 +46,8 @@ class SkillsIndex extends React.Component {
                 skill={skill}
                 fetchSkill={this.props.fetchSkill}
                 endorseSkill={this.props.endorseSkill}
+                history={this.props.history}
+                addedSkill={this.addedSkill}
                 />
             ))
           }
@@ -43,6 +58,7 @@ class SkillsIndex extends React.Component {
           fetchSkills={this.props.fetchSkills}
           flavor={"currentUserIndex"}
           />
+
       </div>
     )
   }

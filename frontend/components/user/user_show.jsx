@@ -8,13 +8,27 @@ class UserShow extends React.Component {
     super(props);
 
     this.state = {
-      userNotFound: false
+      userNotFound: false,
+      addedSkill: false
     }
+
+    this.addedSkill = this.addedSkill.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.fetchUsers();
+    this.props.fetchUser(this.props.location.pathname.slice(-1));
+    console.log(this.props.location.pathname.slice(-1))
+  }
+
+  addedSkill() {
+    this.setState({added: true})
   }
 
 
-
   render() {
+    console.log(this.props);
+
     console.log(!!this.props.user);
     if (!this.props.user) {
       return (
@@ -39,6 +53,7 @@ class UserShow extends React.Component {
                 skill={skill}
                 fetchSkill={this.props.fetchSkill}
                 endorseSkill={this.props.endorseSkill}
+                addedSkill={this.addedSkill}
                 />
             ))
           }
