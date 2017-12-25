@@ -32,10 +32,15 @@ form > h1, h2 {
   text-align: center;
 }
 
-form > input[type="text"] {
+form > input {
   width: 50%;
   margin: 0 auto;
   padding: 10px;
+}
+
+#form-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #submit-button {

@@ -6,7 +6,7 @@ class Api::SkillsController < ApplicationController
 
     @test = "test"
 
-    @skills = current_user.skills
+    @skills = current_user.skills.sort_by { |skill| skill.endorsements.count }
   end
 
   def show

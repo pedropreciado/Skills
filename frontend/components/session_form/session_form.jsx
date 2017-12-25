@@ -100,13 +100,12 @@ class SessionForm extends React.Component {
                   onChange={this.update("password")}
                   placeholder="password"
                   />
-                  <div className="submit-buttons">
 
                <input
+                 id="form-button"
                  type="submit"
                  className="submit"
                  value={this.props.formType}/>
-             </ div>
           </form>
         </div>
       </div>
