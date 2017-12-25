@@ -8,6 +8,10 @@ const SkillsReducer = (oldState = {}, action) => {
       return merge({}, action.skills);
     case RECEIVE_SKILL:
       return merge({}, oldState, {[action.skill.id]: action.skill})
+    case REMOVE_SKILL:
+      let newState = merge({}, oldState);
+      delete newState[action.skill.id];
+      return newState;
     default:
       return oldState;
   }
