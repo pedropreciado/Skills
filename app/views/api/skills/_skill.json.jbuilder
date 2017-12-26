@@ -6,4 +6,7 @@ end
 
 json.endorsements skill.endorsements.count
 
+json.endorsers skill.endorsers.map { |e| e.username}
+
+
 json.current_user_endorsed !!skill.endorsements.find_by(author_id: current_user.id)

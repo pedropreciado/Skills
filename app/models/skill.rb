@@ -17,6 +17,10 @@ class Skill < ApplicationRecord
     foreign_key: :skill_id,
     class_name: :Endorsement
 
+  has_many :endorsers,
+    through: :endorsements,
+    source: :author
+
   belongs_to :user,
     primary_key: :id,
     foreign_key: :user_id,

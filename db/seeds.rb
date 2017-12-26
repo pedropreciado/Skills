@@ -9,12 +9,20 @@
 require 'faker'
 
 
-10.times do
-  skill_num = rand(20)
-  user = User.new({username: Faker::OnePiece.unique.character, password: "thispassword"})
-  user.save!
-  skill_num.times do
-    skill = Skill.new({name: Faker::ProgrammingLanguage.name, user_id: user.id})
-    skill.save!
-  end
-end
+# 10.times do
+  # skill_num = rand(20)
+#   user = User.new({username: Faker::OnePiece.unique.character, password: "thispassword"})
+#   user.save!
+#   skill_num.times do
+#     skill = Skill.new({name: Faker::ProgrammingLanguage.name, user_id: user.id})
+#     skill.save!
+#   end
+# end
+#
+# skill_num = rand(20)
+#
+# user = User.find_by(username: "Pedro Preciado III")
+# skill_num.times do
+#  skill = Skill.new({name: Faker::ProgrammingLanguage.name, user_id: user.id})
+#  skill.save!
+# end
