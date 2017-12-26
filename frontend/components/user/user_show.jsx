@@ -17,16 +17,6 @@ class UserShow extends React.Component {
 
   render() {
 
-    if (!this.props.user) {
-      return (
-        <h1>
-          Loading...
-        </h1>
-      )
-    }
-
-    console.log("username: ", this.props.user.username);
-
     return (
       <div>
         <h1 id="user-name">

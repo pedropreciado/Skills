@@ -8,30 +8,39 @@
 
 require 'faker'
 
-
-# 10.times do
-  # skill_num = rand(20)
-#   user = User.new({username: Faker::OnePiece.unique.character, password: "thispassword"})
+#
+# 30.times do
+#   skill_num = rand(30)
+#   user = User.new({username: Faker::StarWars.unique.character, password: "thispassword"})
 #   user.save!
 #   skill_num.times do
 #     skill = Skill.new({name: Faker::ProgrammingLanguage.name, user_id: user.id})
 #     skill.save!
 #   end
 # end
+
 #
-# skill_num = 19
+
+# skill_num = 30
 #
+user1 = User.find_by(username: "Pedro Preciado III")
+user2 = User.find_by(username: "Alison Cheng")
 #
-# user = User.find_by(username: "Pedro Preciado III")
 # skill_num.times do
-#  skill = Skill.new({name: Faker::ProgrammingLanguage.unique.name, user_id: user.id})
-#  skill.save!
+#  skill1 = Skill.new({name: Faker::ProgrammingLanguage.unique.name, user_id: user1.id})
+#  skill2 = Skill.new({name: Faker::ProgrammingLanguage.unique.name, user_id: user2.id})
+#  skill1.save!
+#  skill2.save!
 # end
 
-# 200.times do
-#   id1 = rand(10..25)
-#   id2 = rand(10..25)
-#   skillID = rand(152..370)
-#   Endorsement.new({skill_id: skillID, author_id: id1, receiver_id: id2 }).save
-#
-# end
+
+20.times do
+  id1 = rand(42..117)
+  # id2 = rand(42..117)
+  skillID1 = 2 * (rand(1123..1145) / 2) + 1
+  skillID2 = 2 * (rand(1124..1146) / 2)
+
+  Endorsement.new({skill_id: skillID1, author_id: id1, receiver_id: user1.id }).save
+  Endorsement.new({skill_id: skillID2, author_id: id1, receiver_id: user2.id }).save
+
+end
