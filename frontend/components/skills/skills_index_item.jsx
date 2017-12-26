@@ -26,6 +26,7 @@ class SkillsIndexItem extends React.Component {
         skill_id: this.props.skill.id
       });
     }
+
     this.props.fetchUser(this.props.skill.user.id);
   }
 

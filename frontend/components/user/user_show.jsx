@@ -44,6 +44,7 @@ class UserShow extends React.Component {
                 skill={skill}
                 fetchSkill={this.props.fetchSkill}
                 endorseSkill={this.props.endorseSkill}
+                unendorseSkill={this.props.unendorseSkill}
                 addedSkill={this.addedSkill}
                 fetchUser={this.props.fetchUser}
                 />

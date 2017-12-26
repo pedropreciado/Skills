@@ -16,7 +16,8 @@ class SkillsForm extends React.Component {
       skill: {
         name: "",
         user_id
-      }
+      },
+      formText: "Enter Name of Skill"
 
     }
 
@@ -46,6 +47,7 @@ class SkillsForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.createSkill(this.state.skill);
+
     this.props.fetchUser(this.props.user.id);
   }
 
@@ -55,7 +57,8 @@ class SkillsForm extends React.Component {
       this.setState({
         skill: merge({}, this.state.skill, {
         "name": event.target.value
-      })
+      }),
+      formText: event.target.value
     })
   }
   }
@@ -71,8 +74,9 @@ class SkillsForm extends React.Component {
           { this.formText() }
 
           <input
+            id="skill-input"
             type="text"
-            placeholder="Enter name of skill"
+            placeholder={this.state.formText}
             onChange={this.update()}
             />
 
