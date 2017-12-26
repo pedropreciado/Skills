@@ -54,7 +54,6 @@ class UserIndex extends React.Component {
         <h3>
           Loading...
         </h3>
-
       )
     }
   }
