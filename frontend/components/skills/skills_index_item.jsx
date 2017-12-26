@@ -63,7 +63,6 @@ class SkillsIndexItem extends React.Component {
 
     let endorsementStyle = this.props.skill.current_user_endorsed ? "endorsement-grey" : "endorsement"
 
-
     return (
        <div>
          <div
