@@ -231,3 +231,16 @@ input:hover, button:hover {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+#user-search {
+  color: grey;
+  font-size: 30px;
+  border: none;
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+}
+
+#user-search:focus {
+  outline: none;
+}

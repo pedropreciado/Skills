@@ -54,9 +54,9 @@ class SkillsIndexItem extends React.Component {
 
     this.props.fetchUser(this.props.skill.user.id);
 
-    if (this.props.history.location.pathname !== "/") {
-      window.location.reload();
-    }
+    // if (this.props.history.location.pathname !== "/") {
+    //   window.location.reload();
+    // }
   }
 
   render() {

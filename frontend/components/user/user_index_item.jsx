@@ -14,7 +14,8 @@ class UserIndexItem extends React.Component {
       return;
     } else {
       return (
-        <div id="more-skills">
+        <div
+          id="more-skills">
           <Link to={`/users/${this.props.user.id}`}
             id="link"
             >
@@ -53,10 +54,15 @@ class UserIndexItem extends React.Component {
           {
             this.props.user.skills.map((skill) => (
               <div>
-                <div id="endorsement">
+                <div
+                  id="endorsement"
+                  key={skill.id}
+                  >
                   {`${skill.endorsements}`}
                 </div>
-                <div id="skill-name">
+                <div
+                  key={skill.name.slice(1)}
+                  id="skill-name">
                 {
                 `${skill.name}`
                 }

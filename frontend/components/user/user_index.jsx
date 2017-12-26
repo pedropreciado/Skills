@@ -5,38 +5,96 @@ class UserIndex extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(props);
+
+
+    this.state = {
+      input: "",
+      inputLength: 0,
+      users: []
+    }
+
+    this.filterUsers = this.filterUsers.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.allUserButton = this.allUserButton.bind(this);
+  }
+
+  componentDidMount() {
+    this.nameInput.focus();
+    this.props.fetchUsers();
+
   }
 
   componentWillMount() {
     this.props.fetchUsers();
   }
 
-  render() {
+  filterUsers() {
+    return (event) => {
+      let input = event.target.value;
+      let inputLength = event.target.value.length;
+      this.setState({
+        input,
+        inputLength,
+      users: this.props.users.filter((user) => {
+        return user.username.slice(0, inputLength).toLowerCase() == input.toLowerCase();
+      })
+    })
+    }
+  }
 
-    if (!this.props.users) {
+  allUserButton() {
+    if (!!Object.keys(this.props.users)[0]) {
       return (
-        <h1>
+        <button onClick={this.handleClick}>
+          All Users
+        </button>
+      )
+    } else {
+      return (
+        <h3>
           Loading...
-        </h1>
+        </h3>
+
       )
     }
+  }
+
+  handleClick() {
+    console.log(this.props.users);
+    this.setState({users: this.props.users})
+  }
+
+  render() {
 
     return (
       <div>
         <h1>
           Users
         </h1>
+        {this.allUserButton()}
+
+        <input
+          type="text"
+          id="user-search"
+          ref={(input) => { this.nameInput = input; }}
+          onChange={this.filterUsers()}
+          placeholder="Search for a user"
+
+          />
+
+
         <ul id="user-index">
           {
-            this.props.users.map((user) => (
+            this.state.users.map((user) => (
               <UserIndexItem
+                key={user.id}
                 user={user}
                 fetchUsers={this.props.fetchUsers}
                 />
             ))
           }
         </ul>
+
       </div>
     )
   }
