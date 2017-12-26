@@ -80,6 +80,10 @@ class UserIndex extends React.Component {
 
           />
 
+        <h1>
+          WHY
+        </h1>
+
         <ul id="user-index">
           {
             this.state.users.map((user) => (
