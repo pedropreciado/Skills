@@ -8,11 +8,6 @@ class UserShow extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      userNotFound: false,
-      addedSkill: false
-    }
-
   }
 
   componentWillMount() {
@@ -30,15 +25,17 @@ class UserShow extends React.Component {
       )
     }
 
+    console.log("username: ", this.props.user.username);
+
     return (
       <div>
-        <h1>
+        <h1 id="user-name">
           {
             this.props.user.username
           }
         </h1>
 
-        <ul>
+        <ul id="user-show">
           {
             this.props.user.skills.map((skill) => (
               <SkillsIndexItem

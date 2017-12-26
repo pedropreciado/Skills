@@ -9,7 +9,12 @@ import UserShowContainer from "./user/user_show_container";
 
 const App = () => (
   <div>
-    <h1>WantedlySkills</h1>
+
+    <Link to="/"
+      id="logo"
+      >
+      <h1>WantedlySkills</h1>
+    </Link>
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />

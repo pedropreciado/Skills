@@ -18,9 +18,13 @@ class SkillsIndexItem extends React.Component {
       return (
         <div id="skill-endorsers">
           {
-          this.props.endorsers.slice(0, 6).map((name) => (
+          this.props.endorsers.slice(0, 6).map((endorser) => (
             <div id="endorser-name">
-              {`${name.slice(0, 1)}`}
+              <Link to={`/api/users/${endorser.id}`}
+                id="link"
+                >
+              {`${endorser.username.slice(0, 1)}`}
+            </Link>
             </div>
           ))
 
@@ -30,6 +34,7 @@ class SkillsIndexItem extends React.Component {
       } else {
       return;
     }
+    return;
   }
 
 

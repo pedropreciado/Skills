@@ -14,10 +14,14 @@ class UserIndexItem extends React.Component {
       return;
     } else {
       return (
-        <div>
+        <div id="more-skills">
+          <Link to={`/users/${this.props.user.id}`}
+            id="link"
+            >
           {
             `+ ${this.props.user.skills.length - 4} more`
           }
+        </Link>
         </div>
       )
 
@@ -40,7 +44,7 @@ class UserIndexItem extends React.Component {
           id="user-name"
           >
           <div id="user-name">
-              {`${this.props.user.username}`}<span>{"'s skills. Click for more."}</span>
+              {`${this.props.user.username}`}<span>{"'s skills. > > >"}</span>
 
         </div>
       </Link>

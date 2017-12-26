@@ -65,6 +65,7 @@ li {
   float: right;
 }
 
+
 .skills-index-nav > h1 {
   color: rgb(47, 180, 198);
   text-align: center;
@@ -155,6 +156,7 @@ li {
   height: 100px;
   width: 80%;
   border-top: .25px solid grey;
+  padding: 2%;
 }
 
 #user-index-item-skills > div {
@@ -191,11 +193,32 @@ li {
 }
 
 #endorser-name {
-  border: .5px solid red;
+  border: .5px solid rgb(47, 180, 198);
   border-radius: 50%;
   height: 23px;
   width: 23px;
   text-align: center;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+#logo {
+  color: grey;
+  text-decoration: none;
+}
+
+#logo:hover {
+  color: rgb(47, 180, 198);
+  transition: .5s;
+}
+
+#link {
+  color: rgb(47, 180, 198);
+  text-decoration: none;
+}
+
+#user-show {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
