@@ -65,23 +65,29 @@ li {
   float: right;
 }
 
+.skills-index-nav > h1 {
+  color: rgb(47, 180, 198);
+  text-align: center;
+}
+
 .skills-index-ul {
   list-style-type: none;
   padding: 20px;
 }
 
 #skills-index-item {
-  width: 40%;
   display: flex;
   justify-content: flex-start;
   min-width: 200px;
   padding-top: 10px;
   padding-bottom: 10px;
+  max-height: 25px;
 }
 
 #endorsement {
   color: rgb(47, 180, 198);
-  width: 20px;
+  width: 23px;
+  height: 23px;
   border-radius: 50%;
   border: 1px solid rgb(47, 180, 198);
   text-align: center;
@@ -96,7 +102,8 @@ li {
 
 
 #endorsement-grey {
-  width: 20px;
+  width: 23px;
+  height: 23px;
   border-radius: 50%;
   border: 1px solid grey;
   background-color: grey;
@@ -157,4 +164,38 @@ li {
   align-items: center;
   padding: 5px;
   margin: 10px;
+}
+
+#top-six {
+  font-size: 20px;
+}
+
+
+#other-skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#skill-endorsers {
+  border-bottom: .25px solid grey;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-left: 20px;
+}
+
+#test {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#endorser-name {
+  border: .5px solid red;
+  border-radius: 50%;
+  height: 23px;
+  width: 23px;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
 }

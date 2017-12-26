@@ -10,7 +10,28 @@ class SkillsIndexItem extends React.Component {
     this.state = {
       addedSkill: false
     }
+    this.endorsers = this.endorsers.bind(this);
   }
+
+  endorsers() {
+    if (this.props.endorsers) {
+      return (
+        <div id="skill-endorsers">
+          {
+          this.props.endorsers.slice(0, 6).map((name) => (
+            <div id="endorser-name">
+              {`${name.slice(0, 1)}`}
+            </div>
+          ))
+
+          }
+        </div>
+      )
+      } else {
+      return;
+    }
+  }
+
 
   endorsable() {
     event.preventDefault();
@@ -44,17 +65,23 @@ class SkillsIndexItem extends React.Component {
            onClick={this.endorsable}
            id="skills-index-item"
            >
-          <div id={endorsementStyle}>
-        {
-          this.props.skill.endorsements
-        }
-          </div>
-          <div id="skill-name">
-        {
-          this.props.skill.name
-        }
+
+           <div id="test">
+
+             <div id={endorsementStyle}>
+               {
+                 this.props.skill.endorsements
+               }
+             </div>
+            <div id="skill-name">
+               {
+                 this.props.skill.name
+               }
+             </div>
+           </div>
+
+          {this.endorsers()}
       </div>
-        </div>
     </div>
     )
   }
