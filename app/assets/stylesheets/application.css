@@ -38,6 +38,10 @@ form > input {
   padding: 10px;
 }
 
+li {
+  list-style-type: none;
+}
+
 #form-button {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -110,4 +114,46 @@ form > input {
 
 #skill-name {
   padding-left: 10px;
+}
+
+#user-index {
+  display: flex;
+  flex-direction: column;
+}
+
+#user-name {
+  font-size: 30px;
+  text-decoration: none;
+  color: rgb(47, 180, 198);
+}
+
+#user-name > a {
+  color: white;
+}
+
+#user-name:hover {
+  color: white;
+  background-color: rgb(47, 180, 198);
+  transition: .5s;
+  width: 80%;
+  border-radius: 2px;
+}
+
+#user-index-item-skills {
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100px;
+  width: 80%;
+  border-top: .25px solid grey;
+}
+
+#user-index-item-skills > div {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
 }

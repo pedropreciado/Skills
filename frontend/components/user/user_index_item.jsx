@@ -5,12 +5,23 @@ import SkillsIndexItem from "../skills/skills_index_item";
 class UserIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+
+    this.moreSkills = this.moreSkills.bind(this);
   }
 
-  componentWillMount() {
-    console.log("hit");
-    this.props.fetchUsers();
+  moreSkills() {
+    if (this.props.user.skills.length <= 3) {
+      return;
+    } else {
+      return (
+        <div>
+          {
+            `+ ${this.props.user.skills.length - 3} more`
+          }
+        </div>
+      )
+
+    }
   }
 
   render() {
@@ -25,23 +36,32 @@ class UserIndexItem extends React.Component {
 
     return (
       <div>
-          <div>
-            <Link to={`/users/${this.props.user.id}`}>
-              {this.props.user.username}
-            </Link>
-        </div>
+        <Link to={`/users/${this.props.user.id}`}
+          id="user-name"
+          >
+          <div id="user-name">
+              {`${this.props.user.username}`}<a>{"'s skills. Click for more."}</a>
 
-        <ul>
-          <li>
+        </div>
+      </Link>
+
+        <div id="user-index-item-skills">
           {
             this.props.user.skills.map((skill) => (
-              <li>
-                { `${skill.name} ${skill.endorsements}` }
-              </li>
-            ))
+              <div>
+                <div id="endorsement">
+                  {`${skill.endorsements}`}
+                </div>
+                <div id="skill-name">
+                {
+                `${skill.name}`
+                }
+              </div>
+              </div>
+            )).slice(0, 3)
           }
-        </li>
-        </ul>
+          {this.moreSkills()}
+      </div>
       </div>
     )
   }

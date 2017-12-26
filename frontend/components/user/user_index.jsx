@@ -19,7 +19,7 @@ class UserIndex extends React.Component {
         <h1>
           User Index
         </h1>
-        <ul>
+        <ul id="user-index">
           {
             this.props.users.map((user) => (
               <UserIndexItem
