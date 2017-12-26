@@ -50,9 +50,9 @@ class SkillsForm extends React.Component {
 
     this.props.fetchUser(this.props.user.id);
 
-    if (this.props.history.location.pathname !== "/") {
-      window.location.reload();
-    }
+    // if (this.props.history.location.pathname !== "/") {
+    //   window.location.reload();
+    // }
 
   }
 
