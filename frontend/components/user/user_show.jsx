@@ -17,6 +17,7 @@ class UserShow extends React.Component {
 
   render() {
 
+
     if (!!this.props.user) {
       return (
         <div>
