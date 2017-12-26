@@ -17,7 +17,7 @@ class UserIndex extends React.Component {
     return (
       <div>
         <h1>
-          User Index
+          User
         </h1>
         <ul id="user-index">
           {

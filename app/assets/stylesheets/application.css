@@ -127,7 +127,7 @@ li {
   color: rgb(47, 180, 198);
 }
 
-#user-name > a {
+#user-name > span{
   color: white;
 }
 
@@ -143,7 +143,7 @@ li {
   font-size: 18px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   height: 100px;
   width: 80%;
@@ -156,4 +156,5 @@ li {
   justify-content: center;
   align-items: center;
   padding: 5px;
+  margin: 10px;
 }

@@ -10,13 +10,13 @@ class UserIndexItem extends React.Component {
   }
 
   moreSkills() {
-    if (this.props.user.skills.length <= 3) {
+    if (this.props.user.skills.length <= 4) {
       return;
     } else {
       return (
         <div>
           {
-            `+ ${this.props.user.skills.length - 3} more`
+            `+ ${this.props.user.skills.length - 4} more`
           }
         </div>
       )
@@ -40,7 +40,7 @@ class UserIndexItem extends React.Component {
           id="user-name"
           >
           <div id="user-name">
-              {`${this.props.user.username}`}<a>{"'s skills. Click for more."}</a>
+              {`${this.props.user.username}`}<span>{"'s skills. Click for more."}</span>
 
         </div>
       </Link>
@@ -58,7 +58,7 @@ class UserIndexItem extends React.Component {
                 }
               </div>
               </div>
-            )).slice(0, 3)
+            )).slice(0, 4)
           }
           {this.moreSkills()}
       </div>

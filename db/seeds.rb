@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+
+10.times do
+  skill_num = rand(20)
+  user = User.new({username: Faker::OnePiece.unique.character, password: "thispassword"})
+  user.save!
+  skill_num.times do
+    skill = Skill.new({name: Faker::ProgrammingLanguage.name, user_id: user.id})
+    skill.save!
+  end
+end

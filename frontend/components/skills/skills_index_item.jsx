@@ -10,13 +10,12 @@ class SkillsIndexItem extends React.Component {
     this.state = {
       addedSkill: false
     }
-
-
   }
 
   endorsable() {
     event.preventDefault();
     if (!this.props.skill.current_user_endorsed) {
+
       this.props.endorseSkill({
         skill_id: this.props.skill.id,
         receiver_id: this.props.skill.user.id
@@ -28,6 +27,10 @@ class SkillsIndexItem extends React.Component {
     }
 
     this.props.fetchUser(this.props.skill.user.id);
+
+    if (this.props.history.location.pathname !== "/") {
+      window.location.reload();
+    }
   }
 
   render() {

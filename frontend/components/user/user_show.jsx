@@ -1,6 +1,7 @@
 import React from "react";
 import SkillsIndexItem from "../skills/skills_index_item";
 import SkillsFormContainer from "../skills/skills_form_container";
+import { Link, withRouter } from "react-router";
 
 class UserShow extends React.Component {
 
@@ -62,4 +63,4 @@ class UserShow extends React.Component {
   }
 }
 
-export default UserShow
+export default withRouter(UserShow);
