@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
                 type="text"
                 value={this.state.username}
                 onChange={this.update("username")}
-                placeholder="username"
+                placeholder="Full name (case sensitive)"
                 />
 
                 <input
