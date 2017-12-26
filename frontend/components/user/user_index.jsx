@@ -14,6 +14,14 @@ class UserIndex extends React.Component {
 
   render() {
 
+    if (!this.props.users) {
+      return (
+        <h1>
+          Loading...
+        </h1>
+      )
+    }
+
     return (
       <div>
         <h1>
