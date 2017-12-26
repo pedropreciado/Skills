@@ -10,9 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
 
 html {
   color: grey;
@@ -40,10 +41,6 @@ form > input {
 
 li {
   list-style-type: none;
-}
-
-input:hover, button:hover {
-  cursor: pointer;
 }
 
 #form-button {

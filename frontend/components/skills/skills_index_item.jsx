@@ -19,13 +19,13 @@ class SkillsIndexItem extends React.Component {
         <div id="skill-endorsers">
           {
           this.props.endorsers.slice(0, 6).map((endorser) => (
+            <Link to={`/api/users/${endorser.id}`}
+              id="link"
+              >
             <div id="endorser-name">
-              <Link to={`/api/users/${endorser.id}`}
-                id="link"
-                >
               {`${endorser.username.slice(0, 1)}`}
-            </Link>
             </div>
+          </Link>
           ))
 
           }

@@ -28,10 +28,10 @@ require 'faker'
 #  skill.save!
 # end
 
-200.times do
-  id1 = rand(10..25)
-  id2 = rand(10..25)
-  skillID = rand(152..370)
-  Endorsement.new({skill_id: skillID, author_id: id1, receiver_id: id2 }).save
-
-end
+# 200.times do
+#   id1 = rand(10..25)
+#   id2 = rand(10..25)
+#   skillID = rand(152..370)
+#   Endorsement.new({skill_id: skillID, author_id: id1, receiver_id: id2 }).save
+#
+# end
