@@ -19,10 +19,19 @@ require 'faker'
 #   end
 # end
 #
-# skill_num = rand(20)
+# skill_num = 19
+#
 #
 # user = User.find_by(username: "Pedro Preciado III")
 # skill_num.times do
-#  skill = Skill.new({name: Faker::ProgrammingLanguage.name, user_id: user.id})
+#  skill = Skill.new({name: Faker::ProgrammingLanguage.unique.name, user_id: user.id})
 #  skill.save!
 # end
+
+200.times do
+  id1 = rand(10..25)
+  id2 = rand(10..25)
+  skillID = rand(152..370)
+  Endorsement.new({skill_id: skillID, author_id: id1, receiver_id: id2 }).save
+
+end
