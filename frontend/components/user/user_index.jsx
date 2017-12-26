@@ -60,7 +60,6 @@ class UserIndex extends React.Component {
   }
 
   handleClick() {
-    console.log(this.props.users);
     this.setState({users: this.props.users})
   }
 

@@ -4,7 +4,6 @@ import { fetchSkills } from "../../actions/skills_actions";
 import UserIndex from "./user_index";
 
 const mapStateToProps = (state) => {
-  console.log(state);
   let skills = state.skills;
 
   return {
