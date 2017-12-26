@@ -52,7 +52,7 @@ class UserIndex extends React.Component {
     } else {
       return (
         <h3>
-          Loading...
+          Loading users...
         </h3>
       )
     }
