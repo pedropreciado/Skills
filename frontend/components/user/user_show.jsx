@@ -17,36 +17,46 @@ class UserShow extends React.Component {
 
   render() {
 
-    return (
-      <div>
-        <h1 id="user-name">
-          {
-            this.props.user.username
-          }
-        </h1>
+    if (!!this.props.user) {
+      return (
+        <div>
+          <h1 id="user-name">
+            {
+              this.props.user.username
+            }
+          </h1>
 
-        <ul id="user-show">
-          {
-            this.props.user.skills.map((skill) => (
-              <SkillsIndexItem
-                skill={skill}
-                fetchSkill={this.props.fetchSkill}
-                endorseSkill={this.props.endorseSkill}
-                unendorseSkill={this.props.unendorseSkill}
-                addedSkill={this.addedSkill}
-                fetchUser={this.props.fetchUser}
-                />
-            ))
-          }
-        </ul>
+          <ul id="user-show">
+            {
+              this.props.user.skills.map((skill) => (
+                <SkillsIndexItem
+                  skill={skill}
+                  fetchSkill={this.props.fetchSkill}
+                  endorseSkill={this.props.endorseSkill}
+                  unendorseSkill={this.props.unendorseSkill}
+                  addedSkill={this.addedSkill}
+                  fetchUser={this.props.fetchUser}
+                  />
+              ))
+            }
+          </ul>
 
-        <SkillsFormContainer
-          user={this.props.user}
-          flavor={"userShow"}
-          />
+          <SkillsFormContainer
+            user={this.props.user}
+            flavor={"userShow"}
+            />
 
-      </div>
-    )
+        </div>
+      )
+
+    } else {
+      return (
+        <div>
+          Loading...
+        </div>
+      )
+    }
+
   }
 }
 
