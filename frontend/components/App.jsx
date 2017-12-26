@@ -29,6 +29,5 @@ const App = () => (
   </div>
 );
 
-console.log(window.currentUser);
 
 export default App;
