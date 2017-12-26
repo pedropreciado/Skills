@@ -9,8 +9,6 @@ class SkillsForm extends React.Component {
 
     let user_id = this.props.user.id;
 
-    console.log(this.props);
-
     this.state = {
       flavor,
       skill: {
