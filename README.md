@@ -2,7 +2,7 @@
 
 [WantedlySkills on Heroku](https://wantedlyskills.herokuapp.com/)
 
-WantedlySkills is a single page feature app built to allow users to add a list of their skills. Users are able to search for the names of people in their network, and endorse or recommend skills for their connections.
+WantedlySkills is a single page feature app built to allow users to add a list of their skills. Users are able to search for the names of people in their network, and endorse or recommend skills for their connections. WantedlySkills was built using React with Redux, Jbuilder, Ruby on Rails, PostgreSQL, and CSS3.
 
 ## Features and Implementation
 
