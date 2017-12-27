@@ -16,4 +16,4 @@ Users are able to list all of their skills.
 Users can look for their friends / connections to endorse and recommend skills on their profile.
 
 ![](https://raw.githubusercontent.com/pedropreciado/wantedlyskills/master/app/assets//images/userSearch.png)
-![](https://raw.githubusercontent.com/pedropreciado/wantedlyskills/master/app/assets//images/Recommendation.png)
+![](https://raw.githubusercontent.com/pedropreciado/wantedlyskills/master/app/assets//images/bensolo.png)
