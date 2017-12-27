@@ -53,15 +53,15 @@ class UserIndexItem extends React.Component {
         <div id="user-index-item-skills">
           {
             this.props.user.skills.map((skill) => (
-              <div>
+              <div
+                key={skill.id}
+                >
                 <div
                   id="endorsement"
-                  key={skill.id}
                   >
                   {`${skill.endorsements}`}
                 </div>
                 <div
-                  key={skill.name.slice(1)}
                   id="skill-name">
                 {
                 `${skill.name}`

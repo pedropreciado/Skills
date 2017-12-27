@@ -43,6 +43,7 @@ class SkillsIndex extends React.Component {
           {
             this.props.skills.slice(0, 5).map((skill) => (
               <SkillsIndexItem
+                key={skill.id}
                 skill={skill}
                 fetchSkill={this.props.fetchSkill}
                 fetchUser={this.props.fetchUser}
@@ -60,6 +61,7 @@ class SkillsIndex extends React.Component {
             {
             this.props.skills.slice(5).map((skill) => (
               <SkillsIndexItem
+                key={skill.id}
                 skill={skill}
                 fetchSkill={this.props.fetchSkill}
                 fetchUser={this.props.fetchUser}

@@ -8,4 +8,5 @@ WantedlySkills is a single page feature app built to allow users to add a list o
 
 ### Skills
 
+
 ### Endorsements
