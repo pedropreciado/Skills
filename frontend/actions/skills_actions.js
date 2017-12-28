@@ -19,6 +19,10 @@ export const createSkill = (skill) => dispatch => {
   })
 };
 
+export const createRecommendation = (skill) => dispatch => (
+  SkillsApiUtil.createSkill(skill).then((skill) => dispatch(receiveRecommendation(skill)))
+)
+
 export const deleteSkill = (id) => dispatch => (
   SkillsApiUtil.deleteSkill(id).then((skill) => dispatch(removeSkill(skill)))
 )
@@ -40,6 +44,12 @@ const receiveSkill = skill => ({
   type: RECEIVE_SKILL,
   skill
 });
+
+const receiveRecommendation = skill => ({
+  type: RECEIVE_RECOMMENDATION,
+  user_id: skill.user.id,
+  skill
+})
 
 const removeSkill = skill => ({
   type: REMOVE_SKILL,
