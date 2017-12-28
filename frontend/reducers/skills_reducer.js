@@ -1,4 +1,9 @@
-import { RECEIVE_ALL_SKILLS, RECEIVE_SKILL, REMOVE_SKILL } from "../actions/skills_actions";
+import {
+  RECEIVE_ALL_SKILLS,
+  RECEIVE_SKILL,
+  REMOVE_SKILL,
+  RECEIVE_RECOMMENDATION
+ } from "../actions/skills_actions";
 import merge from "lodash/merge";
 
 const SkillsReducer = (oldState = {}, action) => {

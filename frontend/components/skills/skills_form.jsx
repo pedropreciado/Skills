@@ -44,9 +44,14 @@ class SkillsForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createSkill(this.state.skill);
 
-    this.props.fetchUser(this.props.user.id);
+    if (this.props.flavor === "userShow") {
+      this.props.recommendSkill(this.state.skill)
+    } else {
+      this.props.createSkill(this.state.skill);
+    }
+
+    // this.props.fetchUser(this.props.user.id);
 
     // if (this.props.history.location.pathname !== "/") {
     //   window.location.reload();

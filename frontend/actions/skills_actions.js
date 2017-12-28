@@ -2,6 +2,7 @@ import * as SkillsApiUtil from "../util/skills_util";
 
 export const RECEIVE_ALL_SKILLS = "RECEIVE_ALL_SKILLS";
 export const RECEIVE_SKILL = "RECEIVE_SKILL";
+export const RECEIVE_RECOMMENDATION = "RECEIVE_RECOMMENDATION";
 export const RECEIVE_ENDORSEMENT = "RECEIVE_ENDORSEMENT";
 export const REMOVE_SKILL = "REMOVE_SKILL";
 
@@ -18,6 +19,10 @@ export const createSkill = (skill) => dispatch => {
     dispatch(receiveSkill(skill))
   })
 };
+
+export const recommendSkill = (skill) => dispatch => (
+  SkillsApiUtil.createSkill(skill).then((skill) => dispatch(receiveRecommendation(skill)))
+)
 
 export const deleteSkill = (id) => dispatch => (
   SkillsApiUtil.deleteSkill(id).then((skill) => dispatch(removeSkill(skill)))
@@ -40,6 +45,12 @@ const receiveSkill = skill => ({
   type: RECEIVE_SKILL,
   skill
 });
+
+const receiveRecommendation = skill => ({
+  type: RECEIVE_RECOMMENDATION,
+  user_id: skill.user.id,
+  skill
+})
 
 const removeSkill = skill => ({
   type: REMOVE_SKILL,
