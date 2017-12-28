@@ -19,8 +19,6 @@ const UsersReducer = (oldState = {}, action) => {
       let newerState = merge({}, oldState)
       newerState[action.user_id].skills.push(action)
       return newerState;
-      // let updatedUser = console.log(newerState[action.user_id], { "skills"]: updatedSkills });
-      // console.log(updatedUser);
     case RECEIVE_ALL_USERS:
       return merge({}, action.users);
     default:
