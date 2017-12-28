@@ -1,4 +1,9 @@
-import { RECEIVE_ALL_SKILLS, RECEIVE_SKILL, REMOVE_SKILL } from "../actions/skills_actions";
+import {
+  RECEIVE_ALL_SKILLS,
+  RECEIVE_SKILL,
+  REMOVE_SKILL,
+  RECEIVE_RECOMMENDATION
+ } from "../actions/skills_actions";
 import merge from "lodash/merge";
 
 const SkillsReducer = (oldState = {}, action) => {
@@ -8,11 +13,6 @@ const SkillsReducer = (oldState = {}, action) => {
       return merge({}, action.skills);
     case RECEIVE_SKILL:
       return merge({}, oldState, {[action.skill.id]: action.skill})
-    case RECEIVE_RECOMMENDATION:
-      let otherState = merge({}, oldState);
-      let user = oldState.users[action.user_id]
-      let newUsers = merge(oldState.users, user)
-      return merge(otherState, {[users]: newUsers})
     case REMOVE_SKILL:
       let newState = merge({}, oldState);
       delete newState[action.skill.id];

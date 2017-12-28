@@ -1,4 +1,8 @@
-import { RECEIVE_USER, RECEIVE_ALL_USERS } from "../actions/users_actions";
+import {
+  RECEIVE_USER,
+  RECEIVE_ALL_USERS
+ } from "../actions/users_actions";
+import { RECEIVE_RECOMMENDATION } from "../actions/skills_actions";
 import merge from "lodash/merge";
 
 const UsersReducer = (oldState = {}, action) => {
@@ -11,6 +15,12 @@ const UsersReducer = (oldState = {}, action) => {
           {[action.user.id]: action.user}
         )
       return newState;
+    case RECEIVE_RECOMMENDATION:
+      let newerState = merge({}, oldState)
+      newerState[action.user_id].skills.push(action)
+      return newerState;
+      // let updatedUser = console.log(newerState[action.user_id], { "skills"]: updatedSkills });
+      // console.log(updatedUser);
     case RECEIVE_ALL_USERS:
       return merge({}, action.users);
     default:
