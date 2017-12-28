@@ -2,6 +2,7 @@ import * as SkillsApiUtil from "../util/skills_util";
 
 export const RECEIVE_ALL_SKILLS = "RECEIVE_ALL_SKILLS";
 export const RECEIVE_SKILL = "RECEIVE_SKILL";
+export const RECEIVE_RECOMMENDATION = "RECEIVE_RECOMMENDATION";
 export const RECEIVE_ENDORSEMENT = "RECEIVE_ENDORSEMENT";
 export const REMOVE_SKILL = "REMOVE_SKILL";
 
@@ -19,7 +20,7 @@ export const createSkill = (skill) => dispatch => {
   })
 };
 
-export const createRecommendation = (skill) => dispatch => (
+export const recommendSkill = (skill) => dispatch => (
   SkillsApiUtil.createSkill(skill).then((skill) => dispatch(receiveRecommendation(skill)))
 )
 
