@@ -32,15 +32,17 @@ class SkillsIndex extends React.Component {
       <div>
       <div className="skills-index-nav">
         <h1>Hello, {this.props.currentUser.username}</h1>
-        <Link to="/users">
-          <button>All Users</button>
-        </Link>
-        <button onClick={this.props.logout}>
-          Logout
-        </button>
       </div>
 
         <ul className="skills-index-ul">
+          <div id="nav-buttons">
+          <Link to="/users">
+            <button>All Users</button>
+          </Link>
+          <button onClick={this.props.logout}>
+            Logout
+          </button>
+        </div>
           <div id="top-six">
           {
             this.props.skills.slice(0, 5).map((skill) => (

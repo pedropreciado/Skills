@@ -23,16 +23,10 @@ class SkillsIndexItem extends React.Component {
         <div id="skill-endorsers">
           {
           this.props.endorsers.slice(0, 6).map((endorser) => (
-            <Link
-              key={Math.random() * 10}
-              to={`/api/users/${endorser.id}`}
-              id="link"
-              >
             <div
               id="endorser-name">
               {`${endorser.username.slice(0, 1)}`}
             </div>
-          </Link>
           ))
 
           }
@@ -60,10 +54,27 @@ class SkillsIndexItem extends React.Component {
     }
 
     this.props.fetchUser(this.props.skill.user.id);
+  }
 
-    // if (this.props.history.location.pathname !== "/") {
-    //   window.location.reload();
-    // }
+  deleteable() {
+    if (this.props.flavor === "userShow") {
+      return (
+        <a></a>
+      )
+    } else {
+      return (
+        <div
+          key={Math.random() * 10}
+          onClick={this.handleClick}
+          onMouseEnter={this.deleteButtonHovered}
+          onMouseLeave={this.deleteButtonLeft}
+          id="delete-skill-button"
+          >
+          {"X"}
+        </div>
+      )
+    }
+
   }
 
   handleClick() {
@@ -77,6 +88,7 @@ class SkillsIndexItem extends React.Component {
   deleteButtonLeft() {
     this.setState({containerDelete: false})
   }
+
 
   render() {
 
@@ -95,7 +107,7 @@ class SkillsIndexItem extends React.Component {
 
     return (
        <div id={containerStyle}>
-         <div
+          <div
            onClick={this.endorsable}
            id="skills-index-item"
            >
@@ -115,18 +127,19 @@ class SkillsIndexItem extends React.Component {
            </div>
 
       </div>
+
       {this.endorsers()}
-      <div
-        onClick={this.handleClick}
-        onMouseEnter={this.deleteButtonHovered}
-        onMouseLeave={this.deleteButtonLeft}
-        id="delete-skill-button"
-        >
-        {"X"}
-      </div>
+      {this.deleteable()}
+
     </div>
     )
   }
 }
 
 export default SkillsIndexItem
+
+// <Link
+//   key={Math.random() * 10}
+//   to={`/api/users/${endorser.id}`}
+//   id="link"
+//   >

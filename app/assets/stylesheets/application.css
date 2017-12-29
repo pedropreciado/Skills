@@ -78,6 +78,8 @@ input:hover, button:hover {
 .skills-index-ul {
   list-style-type: none;
   padding: 20px;
+  max-width: 70%;
+    margin: 0 auto;
 }
 
 #skills-index-item {
@@ -206,11 +208,11 @@ input:hover, button:hover {
   margin-right: 5px;
 }
 
-#endorser-name:hover {
+/* #endorser-name:hover {
   background-color: rgb(47, 180, 198);
   color: white;
   transition: .5s;
-}
+} */
 
 #logo {
   color: grey;
@@ -246,12 +248,19 @@ input:hover, button:hover {
   outline: none;
 }
 
-#skill-container {
+#top-six > #skill-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+#other-skills > #skill-container {
+  display: flex;
+align-items: center;
+justify-content: space-evenly;
+width: 28%;
+border-bottom: .25px solid grey;
+}
 
 #skill-container-red {
   background-color: red;
@@ -262,4 +271,9 @@ input:hover, button:hover {
   color: red;
   transition: .5s;
   cursor: pointer;
+}
+
+#nav-buttons {
+  display: flex;
+  justify-content: space-between;
 }

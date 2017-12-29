@@ -56,6 +56,7 @@ class UserShow extends React.Component {
                   unendorseSkill={this.props.unendorseSkill}
                   addedSkill={this.addedSkill}
                   fetchUser={this.props.fetchUser}
+                  flavor={"userShow"}
                   />
               ))
             }
