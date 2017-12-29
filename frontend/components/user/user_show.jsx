@@ -43,13 +43,10 @@ class UserShow extends React.Component {
             }
           </h1>
 
-          {this.renderLoadingBar()}
-
           <ul id="user-show">
             {
               this.props.user.skills.map((skill) => (
                 <SkillsIndexItem
-                  key={skill.id * 23}
                   skill={skill}
                   fetchSkill={this.props.fetchSkill}
                   endorseSkill={this.props.endorseSkill}

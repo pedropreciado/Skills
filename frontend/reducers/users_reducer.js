@@ -17,7 +17,7 @@ const UsersReducer = (oldState = {}, action) => {
       return newState;
     case RECEIVE_RECOMMENDATION:
       let newerState = merge({}, oldState)
-      newerState[action.user_id].skills.push(action)
+      newerState[action.user_id].skills.push(action.skill)
       return newerState;
     case RECEIVE_ALL_USERS:
       return merge({}, action.users);

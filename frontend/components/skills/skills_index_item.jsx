@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
+let count = 0;
+
 class SkillsIndexItem extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +17,12 @@ class SkillsIndexItem extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.deleteButtonHovered = this.deleteButtonHovered.bind(this);
     this.deleteButtonLeft = this.deleteButtonLeft.bind(this);
+  }
+
+  componentDidMount() {
+    if (!this.props.skill.id) {
+      this.forceUpdate();
+    }
   }
 
   endorsers() {
@@ -35,7 +43,6 @@ class SkillsIndexItem extends React.Component {
       } else {
       return;
     }
-    return;
   }
 
 
@@ -64,7 +71,7 @@ class SkillsIndexItem extends React.Component {
     } else {
       return (
         <div
-          key={Math.random() * 10}
+          key={Math.random() * 1000}
           onClick={this.handleClick}
           onMouseEnter={this.deleteButtonHovered}
           onMouseLeave={this.deleteButtonLeft}
@@ -78,32 +85,29 @@ class SkillsIndexItem extends React.Component {
   }
 
   handleClick() {
-    this.props.deleteSkill(this.props.skill.id)
+    this.props.deleteSkill(this.props.skill.id);
   }
 
   deleteButtonHovered() {
-    this.setState({containerDelete: true})
+    this.setState({containerDelete: true});
   }
 
   deleteButtonLeft() {
-    this.setState({containerDelete: false})
+    this.setState({containerDelete: false});
   }
 
 
   render() {
-
-    if (!this.props.skill.id) {
-        return (
-          <div id="endorsement">
-            Loading...
-          </div>
-        )
-      }
-
-    let endorsementStyle = this.props.skill.current_user_endorsed ? "endorsement-grey" : "endorsement";
+    let endorsementStyle = this.props.skill.current_user_endorsed ? "endorsement-grey" : "endorsement"
     // let containerStyle = this.state.containerDelete ? "skill-container-red" : "skill-container";
 
     let containerStyle = "skill-container";
+
+    if (!this.props.skill.id) {
+      setTimeout(() => {
+        return;
+      }, 2000)
+    }
 
     return (
        <div id={containerStyle}>
