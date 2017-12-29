@@ -1,6 +1,12 @@
 import { connect } from "react-redux";
 import SkillIndex from "./skills_index";
-import { fetchSkills, fetchSkill, createSkill, endorseSkill, unendorseSkill, deleteSkill } from "../../actions/skills_actions";
+import {
+  fetchSkills,
+  fetchSkill,
+  createSkill,
+  endorseSkill,
+  unendorseSkill,
+  deleteSkill } from "../../actions/skills_actions";
 import { fetchUser } from "../../actions/users_actions";
 import { logout } from "../../actions/session_actions";
 import { withRouter } from "react-router";
@@ -25,7 +31,8 @@ const mapDispatchToProps = (dispatch) => ({
   unendorseSkill: (id) => dispatch(unendorseSkill(id)),
   deleteSkill: (id) => dispatch(deleteSkill(id)),
   fetchUser: (id) => dispatch(fetchUser(id)),
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  deleteSkill: (id) => dispatch(deleteSkill(id))
 })
 
 export default withRouter(connect(

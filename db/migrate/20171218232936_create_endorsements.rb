@@ -7,8 +7,9 @@ class CreateEndorsements < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    
+
     add_index :endorsements, :skill_id
     add_index :endorsements, :author_id
+    add_index :endorsements, :receiver_id
   end
 end

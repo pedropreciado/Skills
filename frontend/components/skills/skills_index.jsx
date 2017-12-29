@@ -26,6 +26,8 @@ class SkillsIndex extends React.Component {
 
   render() {
 
+    console.log(this.props);
+
     return (
       <div>
       <div className="skills-index-nav">
@@ -46,6 +48,7 @@ class SkillsIndex extends React.Component {
                 key={skill.id}
                 skill={skill}
                 fetchSkill={this.props.fetchSkill}
+                deleteSkill={this.props.deleteSkill}
                 fetchUser={this.props.fetchUser}
                 unendorseSkill={this.props.unendorseSkill}
                 endorseSkill={this.props.endorseSkill}

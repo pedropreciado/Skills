@@ -7,12 +7,28 @@ class UserShow extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      newSkillLoading: false
+    }
 
+    this.renderLoadingBar = this.renderLoadingBar.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchUsers();
 
+  }
+
+  renderLoadingBar() {
+    if (this.state.newSkillLoading) {
+      return (
+        <div>
+          Loading...
+        </div>
+      )
+    } else {
+      return;
+    }
   }
 
   render() {
@@ -26,6 +42,8 @@ class UserShow extends React.Component {
               this.props.user.username
             }
           </h1>
+
+          {this.renderLoadingBar()}
 
           <ul id="user-show">
             {

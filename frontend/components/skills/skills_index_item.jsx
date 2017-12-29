@@ -8,9 +8,13 @@ class SkillsIndexItem extends React.Component {
     this.endorsable = this.endorsable.bind(this);
 
     this.state = {
-      addedSkill: false
+      addedSkill: false,
+      containerDelete: false
     }
     this.endorsers = this.endorsers.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.deleteButtonHovered = this.deleteButtonHovered.bind(this);
+    this.deleteButtonLeft = this.deleteButtonLeft.bind(this);
   }
 
   endorsers() {
@@ -62,12 +66,35 @@ class SkillsIndexItem extends React.Component {
     // }
   }
 
+  handleClick() {
+    this.props.deleteSkill(this.props.skill.id)
+  }
+
+  deleteButtonHovered() {
+    this.setState({containerDelete: true})
+  }
+
+  deleteButtonLeft() {
+    this.setState({containerDelete: false})
+  }
+
   render() {
 
-    let endorsementStyle = this.props.skill.current_user_endorsed ? "endorsement-grey" : "endorsement"
+    if (!this.props.skill.id) {
+        return (
+          <div id="endorsement">
+            Loading...
+          </div>
+        )
+      }
+
+    let endorsementStyle = this.props.skill.current_user_endorsed ? "endorsement-grey" : "endorsement";
+    // let containerStyle = this.state.containerDelete ? "skill-container-red" : "skill-container";
+
+    let containerStyle = "skill-container";
 
     return (
-       <div>
+       <div id={containerStyle}>
          <div
            onClick={this.endorsable}
            id="skills-index-item"
@@ -87,7 +114,15 @@ class SkillsIndexItem extends React.Component {
              </div>
            </div>
 
-          {this.endorsers()}
+      </div>
+      {this.endorsers()}
+      <div
+        onClick={this.handleClick}
+        onMouseEnter={this.deleteButtonHovered}
+        onMouseLeave={this.deleteButtonLeft}
+        id="delete-skill-button"
+        >
+        {"X"}
       </div>
     </div>
     )

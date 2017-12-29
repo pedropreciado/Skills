@@ -188,6 +188,7 @@ input:hover, button:hover {
   justify-content: flex-end;
   width: 100%;
   margin-left: 20px;
+  padding-right: 3%;
 }
 
 #test {
@@ -243,4 +244,22 @@ input:hover, button:hover {
 
 #user-search:focus {
   outline: none;
+}
+
+#skill-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+#skill-container-red {
+  background-color: red;
+  color: white;
+}
+
+#delete-skill-button:hover {
+  color: red;
+  transition: .5s;
+  cursor: pointer;
 }

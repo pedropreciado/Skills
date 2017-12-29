@@ -50,13 +50,6 @@ class SkillsForm extends React.Component {
     } else {
       this.props.createSkill(this.state.skill);
     }
-
-    // this.props.fetchUser(this.props.user.id);
-
-    // if (this.props.history.location.pathname !== "/") {
-    //   window.location.reload();
-    // }
-
   }
 
   update() {
