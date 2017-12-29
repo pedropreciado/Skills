@@ -71,7 +71,7 @@ class SkillsIndexItem extends React.Component {
     } else {
       return (
         <div
-          key={Math.random() * 1000}
+          key={Math.floor(Math.random() * 10000)}
           onClick={this.handleClick}
           onMouseEnter={this.deleteButtonHovered}
           onMouseLeave={this.deleteButtonLeft}

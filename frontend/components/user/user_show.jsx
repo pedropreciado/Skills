@@ -47,6 +47,7 @@ class UserShow extends React.Component {
             {
               this.props.user.skills.map((skill) => (
                 <SkillsIndexItem
+                  key={skill.id}
                   skill={skill}
                   fetchSkill={this.props.fetchSkill}
                   endorseSkill={this.props.endorseSkill}
