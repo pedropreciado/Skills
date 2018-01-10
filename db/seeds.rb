@@ -23,24 +23,24 @@ require 'faker'
 
 # skill_num = 30
 #
-# user1 = User.find_by(username: "Pedro Preciado III")
+# user1 = User.find_by(username: "Guest")
 # user2 = User.find_by(username: "Alison Cheng")
 #
 # skill_num.times do
-#  skill1 = Skill.new({name: Faker::ProgrammingLanguage.unique.name, user_id: user1.id})
-#  skill2 = Skill.new({name: Faker::ProgrammingLanguage.unique.name, user_id: user2.id})
-#  skill1.save!
-#  skill2.save!
+ # skill1 = Skill.new({name: Faker::ProgrammingLanguage.unique.name, user_id: user1.id})
+ # skill2 = Skill.new({name: Faker::ProgrammingLanguage.unique.name, user_id: user2.id})
+ # skill1.save!
+ # skill2.save!
 # end
 
 #
 # 20.times do
-#   id1 = rand(42..117)
+  # id1 = rand(42..117)
 #   # id2 = rand(42..117)
-#   skillID1 = 2 * (rand(1123..1145) / 2) + 1
+  # skillID1 = 2 * (rand(1123..1145) / 2) + 1
 #   skillID2 = 2 * (rand(1124..1146) / 2)
 #
-#   Endorsement.new({skill_id: skillID1, author_id: id1, receiver_id: user1.id }).save
+  # Endorsement.new({skill_id: skillID1, author_id: id1, receiver_id: user1.id }).save
 #   Endorsement.new({skill_id: skillID2, author_id: id1, receiver_id: user2.id }).save
 #
 # end
