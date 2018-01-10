@@ -19,6 +19,14 @@ html {
   font-family: 'Yantramanav', sans-serif;
 }
 
+.nav-SessionLinks {
+  display: flex;
+justify-content: space-between;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+
 form {
   display: flex;
   flex-direction: column;
@@ -184,6 +192,8 @@ input:hover, button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 #skill-endorsers {
@@ -273,6 +283,7 @@ border-bottom: .25px solid grey;
   transition: .5s;
   cursor: pointer;
 }
+
 
 #nav-buttons {
   display: flex;
