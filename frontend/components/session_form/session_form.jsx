@@ -72,6 +72,21 @@ class SessionForm extends React.Component {
     }
   }
 
+  guestLogin() {
+   if (this.props.formType == "login") {
+     return (
+       <input type="submit"
+              id="form-button"
+               className="submit"
+               onClick={() => this.setState({
+                 username: "Guest",
+                 password: 'thispassword'
+               })}
+               value="guest login"/>
+     )
+   }
+ }
+
   render() {
 
 
@@ -106,6 +121,8 @@ class SessionForm extends React.Component {
                  type="submit"
                  className="submit"
                  value={this.props.formType}/>
+
+               {this.guestLogin()}
           </form>
         </div>
       </div>
