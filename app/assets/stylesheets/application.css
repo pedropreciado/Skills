@@ -50,7 +50,7 @@ li {
   list-style-type: none;
 }
 
-input:hover, button:hover {
+button:hover {
   cursor: pointer;
 }
 
@@ -255,6 +255,7 @@ input:hover, button:hover {
   padding-left: 10px;
 }
 
+
 #user-search:focus {
   outline: none;
 }
@@ -283,7 +284,6 @@ border-bottom: .25px solid grey;
   transition: .5s;
   cursor: pointer;
 }
-
 
 #nav-buttons {
   display: flex;
